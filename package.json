@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "chromatic": "^7.5.4"
+  },  "scripts": {
+    "chromatic": "chromatic",
+    "build-storybook": "build-storybook -s static"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/victoroliux/chromatic.git"
+  }
+}

@@ -1,0 +1,58 @@
+
+Chromatic CLI v7.5.4
+https://www.chromatic.com/docs/cli
+
+Authenticating with Chromatic
+    → Connecting to https://index.chromatic.com
+Authenticated with Chromatic
+    → Using project token '****************7e20'
+Retrieving git information
+    → ✖ Unable to execute command: git --no-pager log -n 1 --format="%H ## %ct ## %ae ## %an" 
+Chromatic only works from inside a Git repository.
+
+✖ Failed to retrieve git information
+✖ Unable to execute command: git --no-pager log -n 1 --format="%H ## %ct ## %ae ## %an" 
+Chromatic only works from inside a Git repository.
+→ View the full stacktrace below
+
+If you need help, please chat with us at https://www.chromatic.com/docs/cli for the fastest response.
+You can also email the team at support@chromatic.com if chat is not an option.
+
+Please provide us with the above CLI output and the following info:
+{
+  "timestamp": "2023-10-30T21:54:47.357Z",
+  "sessionId": "c94acdc2-ece3-4a50-b47c-4f825b25b0a6",
+  "nodePlatform": "darwin",
+  "nodeVersion": "20.9.0",
+  "packageName": "chromatic",
+  "packageVersion": "7.5.4",
+  "flags": {
+    "projectToken": [
+      "chpt_5a16c64822f7e20"
+    ],
+    "outputDir": [],
+    "storybookBuildDir": [],
+    "externals": [],
+    "onlyStoryFiles": [],
+    "onlyStoryNames": [],
+    "untraced": [],
+    "interactive": true,
+    "appCode": []
+  },
+  "configuration": {},
+  "buildScript": "build-storybook -s static",
+  "exitCode": 0,
+  "exitCodeKey": "OK",
+  "errorType": "Error",
+  "errorMessage": "✖ Failed to retrieve git information"
+}
+
+Error: ✖ Failed to retrieve git information
+✖ Unable to execute command: git --no-pager log -n 1 --format="%H ## %ct ## %ae ## %an" 
+Chromatic only works from inside a Git repository.
+    at bs (/Users/imac/Desktop/chromatic/node_modules/chromatic/dist/bin.js:99:189)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async mb (/Users/imac/Desktop/chromatic/node_modules/chromatic/dist/bin.js:99:660)
+    at async nde (/Users/imac/Desktop/chromatic/node_modules/chromatic/dist/bin.js:708:81)
+    at async Rvn (/Users/imac/Desktop/chromatic/node_modules/chromatic/dist/bin.js:814:138)
+    at async XV.task (/Users/imac/Desktop/chromatic/node_modules/chromatic/dist/bin.js:286:12749)
