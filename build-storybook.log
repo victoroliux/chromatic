@@ -1,0 +1,5 @@
+
+> build-storybook
+> build-storybook -s static --output-dir /var/folders/jn/cxlpwfyj3bn0g38b76p6n5vr0000gn/T/chromatic--4168-N31AVJpvF4Da
+
+sh: build-storybook: command not found

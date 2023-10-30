@@ -7,52 +7,45 @@ Authenticating with Chromatic
 Authenticated with Chromatic
     → Using project token '****************7e20'
 Retrieving git information
-    → ✖ Unable to execute command: git --no-pager log -n 1 --format="%H ## %ct ## %ae ## %an" 
-Chromatic only works from inside a Git repository.
+✖ Found only one commit
+This typically means you have ran into one of the following scenarios:
+- You've checked out a shallow copy of the Git repository, which some CI systems do by default.
+  In order for Chromatic to correctly determine baseline commits, we need access to the full Git history graph.
+  Refer to your CI provider's documentation for details.
+- You've only made a single commit so far.  
+  Please make at least one additional commit in order for Chromatic to be able to detect what's changed.
+Retrieved git information
+    → Commit '5435509' on branch 'main'; no ancestor found
+Collecting Storybook metadata
+Collected Storybook metadata
+    → ; using the unknown builder (0); supported addons found: Unknown
+Initializing build
+Initialized build
+    → Build 2 initialized
+Building your Storybook
+    → Running command: npm run build-storybook -- --output-dir /var/folders/jn/cxlpwfyj3bn0g38b76p6n5vr0000gn/T/chromatic--4168-N31AVJpvF4Da
+The CLI tried to run your build-storybook script, but the command failed. This indicates a problem with your Storybook. Here's what to do:
 
-✖ Failed to retrieve git information
-✖ Unable to execute command: git --no-pager log -n 1 --format="%H ## %ct ## %ae ## %an" 
-Chromatic only works from inside a Git repository.
-→ View the full stacktrace below
+- Check the Storybook build log printed below.
+- Run npm run build-storybook or yarn build-storybook yourself and make sure it outputs a valid Storybook by opening the generated index.html in your browser.
+- Review the build-storybook CLI options at https://storybook.js.org/docs/configurations/cli-options/#for-build-storybook
 
-If you need help, please chat with us at https://www.chromatic.com/docs/cli for the fastest response.
-You can also email the team at support@chromatic.com if chat is not an option.
+Command failed with exit code 127: npm run build-storybook -- --output-dir /var/folders/jn/cxlpwfyj3bn0g38b76p6n5vr0000gn/T/chromatic--4168-N31AVJpvF4Da
 
-Please provide us with the above CLI output and the following info:
+ℹ Build command:
+npm run build-storybook -- --output-dir /var/folders/jn/cxlpwfyj3bn0g38b76p6n5vr0000gn/T/chromatic--4168-N31AVJpvF4Da
+
+ℹ Runtime metadata:
 {
-  "timestamp": "2023-10-30T21:54:47.357Z",
-  "sessionId": "c94acdc2-ece3-4a50-b47c-4f825b25b0a6",
   "nodePlatform": "darwin",
   "nodeVersion": "20.9.0",
-  "packageName": "chromatic",
-  "packageVersion": "7.5.4",
-  "flags": {
-    "projectToken": [
-      "chpt_5a16c64822f7e20"
-    ],
-    "outputDir": [],
-    "storybookBuildDir": [],
-    "externals": [],
-    "onlyStoryFiles": [],
-    "onlyStoryNames": [],
-    "untraced": [],
-    "interactive": true,
-    "appCode": []
-  },
-  "configuration": {},
-  "buildScript": "build-storybook -s static",
-  "exitCode": 0,
-  "exitCodeKey": "OK",
-  "errorType": "Error",
-  "errorMessage": "✖ Failed to retrieve git information"
+  "packageManager": "npm",
+  "packageManagerVersion": "10.1.0"
 }
 
-Error: ✖ Failed to retrieve git information
-✖ Unable to execute command: git --no-pager log -n 1 --format="%H ## %ct ## %ae ## %an" 
-Chromatic only works from inside a Git repository.
-    at bs (/Users/imac/Desktop/chromatic/node_modules/chromatic/dist/bin.js:99:189)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async mb (/Users/imac/Desktop/chromatic/node_modules/chromatic/dist/bin.js:99:660)
-    at async nde (/Users/imac/Desktop/chromatic/node_modules/chromatic/dist/bin.js:708:81)
-    at async Rvn (/Users/imac/Desktop/chromatic/node_modules/chromatic/dist/bin.js:814:138)
-    at async XV.task (/Users/imac/Desktop/chromatic/node_modules/chromatic/dist/bin.js:286:12749)
+ℹ Storybook build output:
+/Users/imac/Desktop/chromatic/build-storybook.log
+
+> build-storybook
+> build-storybook -s static --output-dir /var/folders/jn/cxlpwfyj3bn0g38b76p6n5vr0000gn/T/chromatic--4168-N31AVJpvF4Da
+sh: build-storybook: command not found
